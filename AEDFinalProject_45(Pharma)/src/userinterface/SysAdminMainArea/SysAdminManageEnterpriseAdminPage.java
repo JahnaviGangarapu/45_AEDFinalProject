@@ -84,7 +84,7 @@ public class SysAdminManageEnterpriseAdminPage extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Manage Enterprise Admin");
+        jLabel2.setText("Add Enterprise Admin");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Network");
