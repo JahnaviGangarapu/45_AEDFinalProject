@@ -38,7 +38,7 @@ public class SysAdminManageNetworkPage extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
         
         model.setRowCount(0);
-        for (Network network : ecoSystem.getNetworks()) {
+        for (Network network : ecoSystem.getNetworkList()) {
             Object[] row = new Object[2];
             row[0] = network;
             row[1] = network.getZip();
