@@ -4,23 +4,35 @@
  */
 package Business;
 
-import Business.Network.Network;
+import Business.Employee.Employee;
+import Business.Role.SystemAdminRole;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.InventoryDirectory;
 
 /**
  *
- * @author deepshah
+ * @author Team Void
  */
-public class ConfigureASystem {
+public class ConfigureSystem {
     
-    public static Ecosystem configure(){
+    public static EcoSystem configure(){
+    
+     EcoSystem system = EcoSystem.getInstance();
         
-        Ecosystem ecosystem = Ecosystem.getInstance();
+        //Create a network
+        //create an enterprise
+        //initialize some organizations
+        //have some employees 
+        //create user account
+      //  InventoryDirectory idg=new InventoryDirectory();
+     //   System.out.println(InventoryDirectory.inventoryList);
         
-        Network netWork = ecosystem.createAndAddNetwork();
-        netWork.setName("Boston");
-        netWork.setZip(2120);
+        Employee employee = system.getEmployeeDirectory().createEmployee("sysadmin");
         
-        return ecosystem;
+        UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
+        
+        return system;
+
     }
     
 }
