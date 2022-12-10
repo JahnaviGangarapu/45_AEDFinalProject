@@ -167,88 +167,16 @@ public class SysAdminManageNetworkPage extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
-        String name = nameJTextField.getText();
-        String zip = zipTextField.getText().trim();
-        int zipcode=0;
-        ArrayList<Network> networkList = ecosystem.getNetworks();
-        ArrayList<String> networkNames = new ArrayList<>();
-        ArrayList<Integer> networkZips = new ArrayList<>();
-        for (Network network : networkList) {
-            networkNames.add(network.getName());
-            networkZips.add(network.getZip());
-        }
-        try{
-            zipcode = Integer.parseInt(zip);
-        } catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, "Network Zip can only be Integer!!", "Warning!", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if (networkNames.contains(name)) {
-            JOptionPane.showMessageDialog(null, "Network already exists!!");
-            nameJTextField.setText("");
-            zipTextField.setText("");
-            return;
-        }
-        else if(networkZips.contains(zipcode))
-        {
-            JOptionPane.showMessageDialog(null, "Network Zip already exists!!");
-            zipTextField.setText("");
-            nameJTextField.setText("");
-            return;
-        }
-        else {
-            if (name == null || name.equals("")) {
-                JOptionPane.showMessageDialog(null, "Network Name cannot be Empty!!", "Warning!", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-            if(zip == null || zip.equals(""))
-            {
-                JOptionPane.showMessageDialog(null, "Network Zip cannot be Empty!!", "Warning!", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-            else {
-
-                Network network = ecosystem.createAndAddNetwork();
-                network.setName(name);
-                network.setZip(zipcode);
-                JOptionPane.showMessageDialog(null, "New Network is added");
-                nameJTextField.setText("");
-                zipTextField.setText("");
-                populateNetworkTable();
-            }
-        }
+        
 
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
-        sysAdminwjp.populateTree();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        int selectedRow = networkJTable.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row first from the table to delete Network", "Warning!", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        else{
-            Network network = (Network) networkJTable.getValueAt(selectedRow, 0);
-            int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to proceed?");
-            if (dialogResult == JOptionPane.YES_OPTION) {
-                ecosystem.getNetworks().remove(network);
-                populateNetworkTable();
-
-                JOptionPane.showMessageDialog(null, "Network is deleted");
-            }
-
-        }
+        
     }//GEN-LAST:event_btnDeleteActionPerformed
 
 
