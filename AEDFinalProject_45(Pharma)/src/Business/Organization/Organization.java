@@ -14,6 +14,8 @@ package Business.Organization;
 
 public abstract class Organization {
     
+    private String organizationName;
+    
     
     
 
