@@ -30,8 +30,6 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
         jTree = new javax.swing.JTree();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        lblSelectedNode = new javax.swing.JLabel();
         btnManageNetwork = new javax.swing.JButton();
         btnManageEnterprise = new javax.swing.JButton();
         btnManageAdmin = new javax.swing.JButton();
@@ -60,16 +58,10 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel2.setText("System Admin Main Area");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Selected Node:");
-
-        lblSelectedNode.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblSelectedNode.setText("<View_selected_node>");
-
         btnManageNetwork.setBackground(new java.awt.Color(0, 0, 102));
         btnManageNetwork.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnManageNetwork.setForeground(new java.awt.Color(255, 255, 255));
-        btnManageNetwork.setText("Manage Network");
+        btnManageNetwork.setText("Add Network");
         btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageNetworkActionPerformed(evt);
@@ -79,7 +71,7 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
         btnManageEnterprise.setBackground(new java.awt.Color(0, 0, 102));
         btnManageEnterprise.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnManageEnterprise.setForeground(new java.awt.Color(255, 255, 255));
-        btnManageEnterprise.setText("Manage Enterprise");
+        btnManageEnterprise.setText("Add Enterprise");
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageEnterpriseActionPerformed(evt);
@@ -89,7 +81,7 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
         btnManageAdmin.setBackground(new java.awt.Color(0, 0, 102));
         btnManageAdmin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnManageAdmin.setForeground(new java.awt.Color(255, 255, 255));
-        btnManageAdmin.setText("Manage Enterprise Admin");
+        btnManageAdmin.setText("Add Enterprise Admin");
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageAdminActionPerformed(evt);
@@ -122,24 +114,14 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(190, 190, 190)
                         .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
-                .addComponent(lblSelectedNode)
-                .addGap(155, 155, 155))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addComponent(jLabel2)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(lblSelectedNode))
-                .addGap(58, 58, 58)
+                .addGap(112, 112, 112)
                 .addComponent(btnManageNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnManageEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -195,11 +177,9 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
     private javax.swing.JButton btnManageAdmin1;
     private javax.swing.JButton btnManageEnterprise;
     private javax.swing.JButton btnManageNetwork;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTree jTree;
-    private javax.swing.JLabel lblSelectedNode;
     // End of variables declaration//GEN-END:variables
 }
