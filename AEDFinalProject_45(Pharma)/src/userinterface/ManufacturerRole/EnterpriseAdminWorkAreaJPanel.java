@@ -4,6 +4,11 @@
  */
 package userinterface.ManufacturerRole;
 
+import Business.Ecosystem;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import userinterface.SysAdminMainArea.SysAdminManageNetworkPage;
+
 /**
  *
  * @author anoukshasreemurthy
@@ -13,8 +18,13 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form EnterpriseAdminWorkAreaJPanel
      */
-    public EnterpriseAdminWorkAreaJPanel() {
+    JPanel userProcessContainer;
+    Ecosystem ecoSystem;
+    public EnterpriseAdminWorkAreaJPanel(JPanel userProcessContainer,Ecosystem ecoSystem) {
         initComponents();
+        
+        this.userProcessContainer=userProcessContainer;
+        this.ecoSystem=ecoSystem;
     }
 
     /**
@@ -36,7 +46,7 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(153, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("WORK AREA OF THE ADMIN ROLE");
+        jLabel1.setText("WORK AREA OF THE MANUFACTURER ROLE");
 
         userJButton.setBackground(new java.awt.Color(0, 0, 102));
         userJButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -87,12 +97,12 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
                             .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(userJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
+                        .addGap(171, 171, 171)
                         .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(jLabel1)))
-                .addContainerGap(344, Short.MAX_VALUE))
+                        .addGap(161, 161, 161)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(227, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(200, 484, Short.MAX_VALUE)
@@ -104,9 +114,9 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
+                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(manageOrganizationJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,12 +137,17 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_userJButtonActionPerformed
 
     private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
-
-       
+        AddEmployeesJPanel addEmployeeJPanel=new AddEmployeesJPanel(userProcessContainer, ecoSystem);
+        userProcessContainer.add("addEmployeeJPanel",addEmployeeJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_manageEmployeeJButtonActionPerformed
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
-
+        AddOrganizationJPanel addOrganizationJPanel=new AddOrganizationJPanel(userProcessContainer, ecoSystem);
+        userProcessContainer.add("addOrganizationJPanel",addOrganizationJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
         
     }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
 

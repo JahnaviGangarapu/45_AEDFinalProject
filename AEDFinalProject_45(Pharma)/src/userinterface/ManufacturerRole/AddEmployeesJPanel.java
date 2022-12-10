@@ -4,6 +4,9 @@
  */
 package userinterface.ManufacturerRole;
 
+import Business.Ecosystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author anoukshasreemurthy
@@ -13,8 +16,14 @@ public class AddEmployeesJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageEmployeesJPanel
      */
-    public AddEmployeesJPanel() {
+    JPanel userProcessContainer;
+    Ecosystem ecoSystem;
+    
+    public AddEmployeesJPanel(JPanel userProcessContainer, Ecosystem ecoSystem) {
         initComponents();
+        
+        this.userProcessContainer=userProcessContainer;
+        this.ecoSystem=ecoSystem;
     }
 
     /**

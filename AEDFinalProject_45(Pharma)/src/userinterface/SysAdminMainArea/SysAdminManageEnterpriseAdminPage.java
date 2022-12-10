@@ -4,6 +4,11 @@
  */
 package userinterface.SysAdminMainArea;
 
+import Business.Ecosystem;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JPanel;
+
 /**
  *
  * @author JANU
@@ -13,8 +18,14 @@ public class SysAdminManageEnterpriseAdminPage extends javax.swing.JPanel {
     /**
      * Creates new form SysAdminManageEnterpriseAdminPage
      */
-    public SysAdminManageEnterpriseAdminPage() {
+    
+    private JPanel userProcessContainer;
+    private Ecosystem ecoSystem;
+    public SysAdminManageEnterpriseAdminPage(JPanel userProcessContainer, Ecosystem ecoSystem) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = ecoSystem;
     }
 
     /**
@@ -214,7 +225,14 @@ public class SysAdminManageEnterpriseAdminPage extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-       
+       userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SysAdminMainLoginPage sysAdminwjp = (SysAdminMainLoginPage) component;
+//        sysAdminwjp.populateTree();
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed

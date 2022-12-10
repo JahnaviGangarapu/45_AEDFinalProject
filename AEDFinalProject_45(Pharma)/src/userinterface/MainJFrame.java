@@ -7,6 +7,7 @@ package userinterface;
 import Business.DB40.DB4O;
 import Business.Ecosystem;
 import java.awt.CardLayout;
+import userinterface.ManufacturerRole.EnterpriseAdminWorkAreaJPanel;
 import userinterface.SysAdminMainArea.SysAdminMainLoginPage;
 public class MainJFrame extends javax.swing.JFrame {
 
@@ -161,6 +162,15 @@ public class MainJFrame extends javax.swing.JFrame {
             CardLayout layout=(CardLayout)container.getLayout();
             layout.next(container);
         }
+        else if(userName.equalsIgnoreCase("deep") && password.equalsIgnoreCase("deep")){
+            EnterpriseAdminWorkAreaJPanel enterpriseAdmin =new EnterpriseAdminWorkAreaJPanel(container, ecoSystem);
+            container.add("enterpriseAdminJPanel",enterpriseAdmin);
+            CardLayout layout=(CardLayout)container.getLayout();
+            layout.next(container);
+            
+        }
+        
+        
 
              
 
