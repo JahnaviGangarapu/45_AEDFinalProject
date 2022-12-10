@@ -17,7 +17,6 @@ public abstract class WorkRequest {
     private UserAccount sender;
     private UserAccount receiver;
     private String status;
-    
     private Date requestDate;
     private Date resolveDate;
     
