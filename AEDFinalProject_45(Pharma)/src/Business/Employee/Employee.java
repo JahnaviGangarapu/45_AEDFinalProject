@@ -10,4 +10,30 @@ package Business.Employee;
  */
 public class Employee {
     
+    private String name;
+    private int empId;
+    private static int count = 1;
+    
+    public Employee() {
+        empId = count;
+        count++;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getEmpId() {
+        return empId;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+    
 }
