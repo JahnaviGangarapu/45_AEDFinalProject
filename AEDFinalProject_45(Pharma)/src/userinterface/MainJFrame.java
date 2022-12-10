@@ -5,7 +5,7 @@
 package userinterface;
 
 import Business.DB40.DB4O;
-import Business.Ecosystem;
+import Business.EcoSystem;
 import java.awt.CardLayout;
 import userinterface.ManufacturerRole.EnterpriseAdminWorkAreaJPanel;
 import userinterface.SysAdminMainArea.SysAdminMainLoginPage;
@@ -14,7 +14,7 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    private Ecosystem ecoSystem;
+    private EcoSystem ecoSystem;
     private DB4O dB4OUtil = DB4O.getInstance();
     
     public MainJFrame() {

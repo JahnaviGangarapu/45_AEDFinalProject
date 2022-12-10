@@ -4,7 +4,7 @@
  */
 package userinterface.ManufacturerRole;
 
-import Business.Ecosystem;
+import Business.EcoSystem;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import userinterface.SysAdminMainArea.SysAdminManageNetworkPage;
@@ -19,8 +19,8 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form EnterpriseAdminWorkAreaJPanel
      */
     JPanel userProcessContainer;
-    Ecosystem ecoSystem;
-    public EnterpriseAdminWorkAreaJPanel(JPanel userProcessContainer,Ecosystem ecoSystem) {
+    EcoSystem ecoSystem;
+    public EnterpriseAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecoSystem) {
         initComponents();
         
         this.userProcessContainer=userProcessContainer;

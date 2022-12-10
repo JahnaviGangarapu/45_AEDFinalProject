@@ -4,7 +4,7 @@
  */
 package userinterface.SysAdminMainArea;
 
-import Business.Ecosystem;
+import Business.EcoSystem;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -20,8 +20,8 @@ public class SysAdminManageEnterpriseAdminPage extends javax.swing.JPanel {
      */
     
     private JPanel userProcessContainer;
-    private Ecosystem ecoSystem;
-    public SysAdminManageEnterpriseAdminPage(JPanel userProcessContainer, Ecosystem ecoSystem) {
+    private EcoSystem ecoSystem;
+    public SysAdminManageEnterpriseAdminPage(JPanel userProcessContainer, EcoSystem ecoSystem) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;

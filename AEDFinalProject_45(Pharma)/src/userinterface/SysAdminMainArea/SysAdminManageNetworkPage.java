@@ -4,7 +4,7 @@
  */
 package userinterface.SysAdminMainArea;
 
-import Business.Ecosystem;
+import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -23,9 +23,9 @@ public class SysAdminManageNetworkPage extends javax.swing.JPanel {
      * Creates new form SysAdminManageNetworkPage
      */
     private JPanel userProcessContainer;
-    private Ecosystem ecoSystem;
+    private EcoSystem ecoSystem;
     
-    public SysAdminManageNetworkPage(JPanel userProcessContainer, Ecosystem ecoSystem) {
+    public SysAdminManageNetworkPage(JPanel userProcessContainer, EcoSystem ecoSystem) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
@@ -38,7 +38,7 @@ public class SysAdminManageNetworkPage extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
         
         model.setRowCount(0);
-        for (Network network : ecoSystem.getNetworks()) {
+        for (Network network : ecoSystem.getNetworkList()) {
             Object[] row = new Object[2];
             row[0] = network;
             row[1] = network.getZip();

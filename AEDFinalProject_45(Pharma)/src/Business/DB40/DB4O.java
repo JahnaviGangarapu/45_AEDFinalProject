@@ -7,8 +7,8 @@ import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
-import Business.Ecosystem;
-import Business.ConfigureASystem;
+import Business.EcoSystem;
+import Business.ConfigureSystem;
 import com.db4o.ObjectSet;
 
 import java.nio.file.Paths;
@@ -46,7 +46,7 @@ public class DB4O {
             config.common().updateDepth(Integer.MAX_VALUE);
 
             //Register your top most Class here
-            config.common().objectClass(Ecosystem.class).cascadeOnUpdate(true); // Change to the object you want to save
+            config.common().objectClass(EcoSystem.class).cascadeOnUpdate(true); // Change to the object you want to save
 
             ObjectContainer db = Db4oEmbedded.openFile(config, FILENAME);
             return db;
@@ -56,7 +56,7 @@ public class DB4O {
         return null;
     }
     
-    public synchronized void storeSystem(Ecosystem ecoSystem) {
+    public synchronized void storeSystem(EcoSystem ecoSystem) {
         try{
         ObjectContainer conn = createConnection();
         conn.store(ecoSystem);
@@ -67,20 +67,20 @@ public class DB4O {
         }
     }
     
-    public Ecosystem retrieveSystem(){
+    public EcoSystem retrieveSystem(){
         //try{            
         ObjectContainer conn = createConnection();
-        ObjectSet<Ecosystem> ecoSystems;
+        ObjectSet<EcoSystem> ecoSystems;
         //try{
             
-         ecoSystems = conn.query(Ecosystem.class); // Change to the object you want to save
+         ecoSystems = conn.query(EcoSystem.class); // Change to the object you want to save
         //}catch (Exception ex) {
             //System.out.print(ex.getCause());
         //    ecosystems = conn.query(EcoSystem.class);
         //}
-        Ecosystem ecosystem;
+        EcoSystem ecosystem;
         if (ecoSystems.size() == 0){
-            ecosystem = ConfigureASystem.configure();  // If there's no System in the record, create a new one
+            ecosystem = ConfigureSystem.configure();  // If there's no System in the record, create a new one
         }
         else{
             ecosystem = ecoSystems.get(ecoSystems.size() - 1);

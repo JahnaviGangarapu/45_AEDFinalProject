@@ -4,7 +4,7 @@
  */
 package userinterface.ManufacturerRole;
 
-import Business.Ecosystem;
+import Business.EcoSystem;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -18,9 +18,9 @@ public class AddOrganizationJPanel extends javax.swing.JPanel {
      * Creates new form AddOrganizationJPanel
      */
     JPanel userProcessContainer;
-    Ecosystem ecoSystem;
+    EcoSystem ecoSystem;
     
-    public AddOrganizationJPanel(JPanel userProcessContainer,Ecosystem ecoSystem) {
+    public AddOrganizationJPanel(JPanel userProcessContainer,EcoSystem ecoSystem) {
         initComponents();
         
         this.userProcessContainer=userProcessContainer;

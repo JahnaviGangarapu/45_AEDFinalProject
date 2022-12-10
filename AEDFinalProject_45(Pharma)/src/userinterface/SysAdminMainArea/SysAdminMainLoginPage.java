@@ -4,7 +4,7 @@
  */
 package userinterface.SysAdminMainArea;
 
-import Business.Ecosystem;
+import Business.EcoSystem;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -18,8 +18,8 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
      * Creates new form SysAdminMainLoginPage
      */
     JPanel userProcessContainer;
-    Ecosystem ecoSystem;
-    public SysAdminMainLoginPage(JPanel userProcessContainer,Ecosystem ecoSystem) {
+    EcoSystem ecoSystem;
+    public SysAdminMainLoginPage(JPanel userProcessContainer,EcoSystem ecoSystem) {
         this.userProcessContainer=userProcessContainer;
         this.ecoSystem=ecoSystem;
         initComponents();
