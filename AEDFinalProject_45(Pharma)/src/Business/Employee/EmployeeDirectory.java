@@ -8,16 +8,16 @@ import java.util.ArrayList;
 
 /**
  *
- * @author JANU
+ * @author deepshah
  */
 public class EmployeeDirectory {
     
-    private ArrayList<Employee> employeeList;
-    
+      private ArrayList<Employee> employeeList;
+
     public EmployeeDirectory() {
         employeeList = new ArrayList();
     }
-    
+
     public ArrayList<Employee> getEmployeeList() {
         return employeeList;
     }
@@ -28,5 +28,4 @@ public class EmployeeDirectory {
         employeeList.add(employee);
         return employee;
     }
-    
 }

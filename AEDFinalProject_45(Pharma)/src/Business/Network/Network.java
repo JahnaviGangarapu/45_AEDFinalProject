@@ -4,18 +4,20 @@
  */
 package Business.Network;
 
+import Business.Enterprise.EnterpriseDirectory;
+
 /**
  *
- * @author JANU
+ * @author Pankaj Gorav
  */
 public class Network {
+    
     private String name;
-    private int zip;
+    private EnterpriseDirectory enterpriseDirectory;
     
     public Network(){
-        
+        enterpriseDirectory=new EnterpriseDirectory();
     }
-
     public String getName() {
         return name;
     }
@@ -24,12 +26,8 @@ public class Network {
         this.name = name;
     }
 
-    public int getZip() {
-        return zip;
-    }
-
-    public void setZip(int zip) {
-        this.zip = zip;
+    public EnterpriseDirectory getEnterpriseDirectory() {
+        return enterpriseDirectory;
     }
     
     @Override

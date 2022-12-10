@@ -15,9 +15,9 @@ import Business.WorkQueue.InventoryDirectory;
  */
 public class ConfigureSystem {
     
-    public static Ecosystem configure(){
+    public static EcoSystem configure(){
     
-     Ecosystem system = Ecosystem.getInstance();
+     EcoSystem system = EcoSystem.getInstance();
         
         //Create a network
         //create an enterprise
@@ -36,3 +36,4 @@ public class ConfigureSystem {
     }
     
 }
+

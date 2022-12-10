@@ -2,39 +2,38 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Business.DB40;
+package Business.DB4O;
+
+import Business.ConfigureSystem;
+import Business.EcoSystem;
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
-import Business.Ecosystem;
-import Business.ConfigureASystem;
-import com.db4o.ObjectSet;
-
 import java.nio.file.Paths;
-
 /**
  *
- * @author deepshah
+ * @author Team Void
  */
-public class DB4O {
+public class DB4OUtil {
     
     private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
-    private static DB4O dB4OUtil;
+    private static DB4OUtil dB4OUtil;
     
-    public synchronized static DB4O getInstance(){
+    public synchronized static DB4OUtil getInstance(){
         if (dB4OUtil == null){
-            dB4OUtil = new DB4O();
+            dB4OUtil = new DB4OUtil();
         }
         return dB4OUtil;
     }
-    
+
     protected synchronized static void shutdown(ObjectContainer conn) {
         if (conn != null) {
             conn.close();
         }
     }
-    
+
     private ObjectContainer createConnection() {
         try {
 
@@ -46,7 +45,7 @@ public class DB4O {
             config.common().updateDepth(Integer.MAX_VALUE);
 
             //Register your top most Class here
-            config.common().objectClass(Ecosystem.class).cascadeOnUpdate(true); // Change to the object you want to save
+            config.common().objectClass(EcoSystem.class).cascadeOnUpdate(true); // Change to the object you want to save
 
             ObjectContainer db = Db4oEmbedded.openFile(config, FILENAME);
             return db;
@@ -55,42 +54,28 @@ public class DB4O {
         }
         return null;
     }
-    
-    public synchronized void storeSystem(Ecosystem ecoSystem) {
-        try{
+
+    public synchronized void storeSystem(EcoSystem system) {
         ObjectContainer conn = createConnection();
-        conn.store(ecoSystem);
+        conn.store(system);
         conn.commit();
         conn.close();
-        }catch (Exception ex) {
-            System.out.print(ex.getMessage());
-        }
     }
     
-    public Ecosystem retrieveSystem(){
-        //try{            
+    public EcoSystem retrieveSystem(){
         ObjectContainer conn = createConnection();
-        ObjectSet<Ecosystem> ecoSystems;
-        //try{
-            
-         ecoSystems = conn.query(Ecosystem.class); // Change to the object you want to save
-        //}catch (Exception ex) {
-            //System.out.print(ex.getCause());
-        //    ecosystems = conn.query(EcoSystem.class);
-        //}
-        Ecosystem ecosystem;
-        if (ecoSystems.size() == 0){
-            ecosystem = ConfigureASystem.configure();  // If there's no System in the record, create a new one
+        ObjectSet<EcoSystem> systems = conn.query(EcoSystem.class); // Change to the object you want to save
+        EcoSystem system;
+        if (systems.size() == 0){
+            system = ConfigureSystem.configure();  // If there's no System in the record, create a new one
         }
         else{
-            ecosystem = ecoSystems.get(ecoSystems.size() - 1);
+            system = systems.get(systems.size() - 1);
         }
         conn.close();
-        return ecosystem;
-        //}catch (Exception ex) {
-        //    System.out.print(ex.getMessage());
-        //}
-        //return null;
+        return system;
     }
+    
+    
     
 }
