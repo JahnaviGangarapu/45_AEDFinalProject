@@ -32,15 +32,15 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                       <Component id="enterpriseLabel" min="-2" pref="140" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="586" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="344" max="32767" attributes="0"/>
+              <EmptySpace pref="227" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
@@ -56,9 +56,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="enterpriseLabel" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="enterpriseLabel" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="manageOrganizationJButton" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="manageEmployeeJButton" min="-2" pref="60" max="-2" attributes="0"/>
@@ -82,7 +82,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="WORK AREA OF THE ADMIN ROLE"/>
+        <Property name="text" type="java.lang.String" value="WORK AREA OF THE MANUFACTURER ROLE"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="userJButton">
