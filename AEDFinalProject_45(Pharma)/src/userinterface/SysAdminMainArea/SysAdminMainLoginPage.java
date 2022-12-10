@@ -169,11 +169,17 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageNetworkActionPerformed
 
     private void btnManageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseActionPerformed
-        
+        SysAdminManageEnterprisePage manageEnterprise = new SysAdminManageEnterprisePage(userProcessContainer, ecoSystem);
+        userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterprise);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageEnterpriseActionPerformed
 
     private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
-        
+        SysAdminManageEnterpriseAdminPage manageEnterpriseAdmin = new SysAdminManageEnterpriseAdminPage(userProcessContainer, ecoSystem);
+        userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdmin);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageAdminActionPerformed
 
     private void btnManageAdmin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdmin1ActionPerformed
