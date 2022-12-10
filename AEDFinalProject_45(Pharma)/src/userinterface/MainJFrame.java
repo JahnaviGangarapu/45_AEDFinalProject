@@ -119,7 +119,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(loginJLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 730, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(usernameJLabel)
                 .addGap(42, 42, 42)
                 .addComponent(userNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -138,7 +138,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         container.setLayout(new java.awt.CardLayout());
 
-        imageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/digital_pharma_1100x1600.jpg"))); // NOI18N
+        imageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cover_1_1190x1000.jpg"))); // NOI18N
         container.add(imageLbl, "card2");
 
         jSplitPane1.setRightComponent(container);
