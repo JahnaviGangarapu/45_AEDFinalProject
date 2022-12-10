@@ -4,6 +4,11 @@
  */
 package userinterface.ManufacturerRole;
 
+import Business.Ecosystem;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import userinterface.SysAdminMainArea.SysAdminManageNetworkPage;
+
 /**
  *
  * @author anoukshasreemurthy
@@ -13,8 +18,13 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form EnterpriseAdminWorkAreaJPanel
      */
-    public EnterpriseAdminWorkAreaJPanel() {
+    JPanel userProcessContainer;
+    Ecosystem ecoSystem;
+    public EnterpriseAdminWorkAreaJPanel(JPanel userProcessContainer,Ecosystem ecoSystem) {
         initComponents();
+        
+        this.userProcessContainer=userProcessContainer;
+        this.ecoSystem=ecoSystem;
     }
 
     /**
@@ -127,12 +137,17 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_userJButtonActionPerformed
 
     private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
-
-       
+        AddEmployeesJPanel addEmployeeJPanel=new AddEmployeesJPanel(userProcessContainer, ecoSystem);
+        userProcessContainer.add("addEmployeeJPanel",addEmployeeJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_manageEmployeeJButtonActionPerformed
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
-
+        AddOrganizationJPanel addOrganizationJPanel=new AddOrganizationJPanel(userProcessContainer, ecoSystem);
+        userProcessContainer.add("addOrganizationJPanel",addOrganizationJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
         
     }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
 
