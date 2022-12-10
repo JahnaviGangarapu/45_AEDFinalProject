@@ -53,13 +53,13 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="passwordField" min="-2" pref="188" max="-2" attributes="0"/>
+                          <Component id="passwordJTextField" min="-2" pref="188" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="userNameJTextField" alignment="0" pref="188" max="32767" attributes="0"/>
+                              <Component id="NameJTextField" alignment="0" pref="188" max="32767" attributes="0"/>
                               <Component id="usernameJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="passwordJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="logoutJButton" alignment="0" pref="188" max="32767" attributes="0"/>
-                              <Component id="loginJButton" alignment="0" max="32767" attributes="0"/>
+                              <Component id="LogoutJButton" alignment="0" pref="188" max="32767" attributes="0"/>
+                              <Component id="LoginJButton" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -77,22 +77,22 @@
                   <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                   <Component id="usernameJLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="userNameJTextField" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="NameJTextField" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="passwordJLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="passwordField" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="passwordJTextField" min="-2" pref="27" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                  <Component id="loginJButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="LoginJButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                  <Component id="logoutJButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="LogoutJButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="loginJButton">
+        <Component class="javax.swing.JButton" name="LoginJButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="ff" red="ff" type="rgb"/>
@@ -103,15 +103,15 @@
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginJButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoginJButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="userNameJTextField">
+        <Component class="javax.swing.JTextField" name="NameJTextField">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userNameJTextFieldActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameJTextFieldActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="passwordField">
+        <Component class="javax.swing.JPasswordField" name="passwordJTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="usernameJLabel">
           <Properties>
@@ -140,7 +140,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="loginJLabel">
         </Component>
-        <Component class="javax.swing.JButton" name="logoutJButton">
+        <Component class="javax.swing.JButton" name="LogoutJButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="ff" red="ff" type="rgb"/>
@@ -152,7 +152,7 @@
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutJButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogoutJButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
