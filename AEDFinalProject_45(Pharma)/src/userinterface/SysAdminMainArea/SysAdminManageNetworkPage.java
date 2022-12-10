@@ -4,6 +4,15 @@
  */
 package userinterface.SysAdminMainArea;
 
+import Business.Ecosystem;
+import Business.Network.Network;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author JANU
@@ -13,8 +22,28 @@ public class SysAdminManageNetworkPage extends javax.swing.JPanel {
     /**
      * Creates new form SysAdminManageNetworkPage
      */
-    public SysAdminManageNetworkPage() {
+    private JPanel userProcessContainer;
+    private Ecosystem ecoSystem;
+    
+    public SysAdminManageNetworkPage(JPanel userProcessContainer, Ecosystem ecoSystem) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = ecoSystem;
+        
+//        populateNetworkTable();
+    }
+    
+    private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
+
+        model.setRowCount(0);
+        for (Network network : ecoSystem.getNetworks()) {
+            Object[] row = new Object[2];
+            row[0] = network;
+            row[1] = network.getZip();
+            model.addRow(row);
+        }
     }
 
     /**
@@ -166,13 +195,72 @@ public class SysAdminManageNetworkPage extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-
+        
+        String name = nameJTextField.getText();
+        String zip = zipTextField.getText().trim();
+        int zipcode=0;
+//        ArrayList<Network> networkList = ecoSystem.getNetworks();
+//        ArrayList<String> networkNames = new ArrayList<>();
+//        ArrayList<Integer> networkZips = new ArrayList<>();
+//        for (Network network : networkList) {
+//            networkNames.add(network.getName());
+//            networkZips.add(network.getZip());
+//        }
+        try{
+            zipcode = Integer.parseInt(zip); 
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Network Zip can only be Integer!!", "Warning!", JOptionPane.WARNING_MESSAGE);
+            return;  
+        }
+//        if (networkNames.contains(name)) {
+//            JOptionPane.showMessageDialog(null, "Network already exists!!");
+//            nameJTextField.setText("");
+//            zipTextField.setText("");
+//            return;
+//        }
+//        else if(networkZips.contains(zipcode))
+//        {
+//           JOptionPane.showMessageDialog(null, "Network Zip already exists!!");
+//            zipTextField.setText("");
+//            nameJTextField.setText("");
+//            return; 
+//        }
+//        else {
+            if (name == null || name.equals("")) {
+                JOptionPane.showMessageDialog(null, "Network Name cannot be Empty!!", "Warning!", JOptionPane.WARNING_MESSAGE);
+                return;
+            } 
+             if(zip == null || zip.equals(""))
+             {
+                JOptionPane.showMessageDialog(null, "Network Zip cannot be Empty!!", "Warning!", JOptionPane.WARNING_MESSAGE);
+                return; 
+             }
+            else {
+                
+                Network network = ecoSystem.createAndAddNetwork();
+                network.setName(name);
+                network.setZip(zipcode);
+                JOptionPane.showMessageDialog(null, "New Network is added");
+                nameJTextField.setText("");
+                zipTextField.setText("");
+//                populateNetworkTable();
+//            }
+        }
+            
+        
+        
         
 
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-        
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SysAdminMainLoginPage sysAdminwjp = (SysAdminMainLoginPage) component;
+//        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -193,3 +281,5 @@ public class SysAdminManageNetworkPage extends javax.swing.JPanel {
     private javax.swing.JTextField zipTextField;
     // End of variables declaration//GEN-END:variables
 }
+
+

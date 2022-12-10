@@ -53,5 +53,7 @@ public class Ecosystem extends Organization{
     public void setNetworks(ArrayList<Network> netWorks) {
         this.netWorks = netWorks;
     }
+    
+   
    
 }
