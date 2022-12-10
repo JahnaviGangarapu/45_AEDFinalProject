@@ -4,6 +4,10 @@
  */
 package userinterface.SysAdminMainArea;
 
+import Business.Ecosystem;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author JANU
@@ -13,7 +17,11 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
     /**
      * Creates new form SysAdminMainLoginPage
      */
-    public SysAdminMainLoginPage() {
+    JPanel userProcessContainer;
+    Ecosystem ecoSystem;
+    public SysAdminMainLoginPage(JPanel userProcessContainer,Ecosystem ecoSystem) {
+        this.userProcessContainer=userProcessContainer;
+        this.ecoSystem=ecoSystem;
         initComponents();
     }
 
@@ -154,7 +162,10 @@ public class SysAdminMainLoginPage extends javax.swing.JPanel {
     }//GEN-LAST:event_jTreeValueChanged
 
     private void btnManageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageNetworkActionPerformed
-       
+        SysAdminManageNetworkPage manageNetworkJPanel=new SysAdminManageNetworkPage(userProcessContainer, ecoSystem);
+        userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageNetworkActionPerformed
 
     private void btnManageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseActionPerformed

@@ -18,6 +18,7 @@ public class ConfigureASystem {
         
         Network netWork = ecosystem.createAndAddNetwork();
         netWork.setName("Boston");
+        netWork.setZip(2120);
         
         return ecosystem;
     }

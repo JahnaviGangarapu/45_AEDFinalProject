@@ -4,18 +4,17 @@
  */
 package userinterface;
 
-
-
-/**
- *
- * @author deepshah
- */
+import Business.DB40.DB4O;
+import Business.Ecosystem;
+import java.awt.CardLayout;
+import userinterface.SysAdminMainArea.SysAdminMainLoginPage;
 public class MainJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainJFrame
      */
-   
+    private Ecosystem ecoSystem;
+    private DB4O dB4OUtil = DB4O.getInstance();
     
     public MainJFrame() {
         initComponents();
@@ -120,7 +119,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(loginJLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 730, Short.MAX_VALUE)
                 .addComponent(usernameJLabel)
                 .addGap(42, 42, 42)
                 .addComponent(userNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,23 +143,24 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setRightComponent(container);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1180, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, Short.MAX_VALUE)
-        );
+        getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
        
+        String userName = userNameJTextField.getText();
         
+        char[] passwordCharArray = passwordField.getPassword();
+        String password = String.valueOf(passwordCharArray);
+        
+        if(userName.equalsIgnoreCase("sysadmin") && password.equalsIgnoreCase("sysadmin")){
+            SysAdminMainLoginPage manageNetworkJPanel=new SysAdminMainLoginPage(container, ecoSystem);
+            container.add("manageNetworkJPanel",manageNetworkJPanel);
+            CardLayout layout=(CardLayout)container.getLayout();
+            layout.next(container);
+        }
 
              
 
