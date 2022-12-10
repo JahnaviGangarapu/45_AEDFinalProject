@@ -51,7 +51,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(420, 340, 400, 86);
+        jButton1.setBounds(420, 340, 400, 89);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cover_1_1190x1000.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -76,10 +76,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        MainPageJPanel MP=new MainPageJPanel( ecosystem, userProcessContainer);
-        userProcessContainer.add("MainPageJPanel",MP);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
