@@ -60,7 +60,7 @@ public class SysAdminManageNetworkPage extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel2.setText("Manage Network");
+        jLabel2.setText("Add Network");
 
         btnDelete.setBackground(new java.awt.Color(0, 0, 102));
         btnDelete.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
