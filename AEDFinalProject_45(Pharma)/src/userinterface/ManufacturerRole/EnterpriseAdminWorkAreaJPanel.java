@@ -46,7 +46,7 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(153, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("WORK AREA OF THE ADMIN ROLE");
+        jLabel1.setText("WORK AREA OF THE MANUFACTURER ROLE");
 
         userJButton.setBackground(new java.awt.Color(0, 0, 102));
         userJButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -97,12 +97,12 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
                             .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(userJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
+                        .addGap(171, 171, 171)
                         .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(jLabel1)))
-                .addContainerGap(344, Short.MAX_VALUE))
+                        .addGap(161, 161, 161)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(227, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(200, 484, Short.MAX_VALUE)
@@ -114,9 +114,9 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
+                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(manageOrganizationJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
